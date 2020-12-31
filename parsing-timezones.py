@@ -261,7 +261,7 @@ timezone_info = {
 }
 #   }}}
 
-tests_dt = [ '2020-12-27T11:51:56AEST', '2020-12-27T12:51:56AEDT'  ]
+tests_dt = [ '2020-12-27T11:51:56', '2020-12-27T11:51:56AEST', '2020-12-27T12:51:56AEDT'  ]
 check_epoch = '1609033916.0'
 test_datetime_format = "%Y-%m-%dT%H:%M:%S%Z"
 
@@ -275,6 +275,7 @@ for loop_test_dt in tests_dt:
     results_epoch = []
     loop_output_str = ""
 
+    #_result = dateparser.parse(loop_test_dt, settings={'RETURN_AS_TIMEZONE_AWARE': True})
     _result = dateparser.parse(loop_test_dt, settings={'RETURN_AS_TIMEZONE_AWARE': True})
     results_dt.append(_result)
     results_epoch.append(_result.timestamp())
@@ -303,36 +304,36 @@ for loop_test_dt in tests_dt:
         assert str(loop_result_epoch) == check_epoch, "loop_result_epoch=(%s) != check_epoch" % str(loop_result_epoch)
 
 #   Parsing datetime using <various> and format test_datetime_format
-for loop_test_dt in tests_dt:
-    results_dt = []
-    results_epoch = []
-    loop_output_str = ""
-
-    #   Ongoing: 2020-12-28T17:55:37AEST datetime.strptime(datetime, format) does not support all named timezones (%Z)
-
-    _result = dateparser.parse(loop_test_dt, date_formats=[ test_datetime_format ],  settings={'RETURN_AS_TIMEZONE_AWARE': True})
-    results_dt.append(_result)
-    results_epoch.append(_result.timestamp())
-
-    #   Ongoing: 2020-12-28T18:33:52AEST custom format for dateutil.parser.parse()?
-
-    sys.stderr.write("loop_test_dt=(%s)\n" % str(loop_test_dt))
-    sys.stderr.write("check_epoch=(%s)\n" % str(check_epoch))
-    loop_output_str += "results_dt:\n%s\n" % pprint.pformat(results_dt)
-    for loop_line in loop_output_str.strip().split("\n"):
-        sys.stderr.write("\t%s\n" % loop_line)
-    sys.stderr.write("\n")
-    #   Verify each item in results_dt is equal to next item in list
-    for loop_i in range(0, len(results_dt)-1):
-        assert results_dt[loop_i] == results_dt[loop_i+1], "results not equal for loop_i=(%s)" % str(loop_i)
-    #   Verify each item in results_dt, when convert to string using test_datetime_format, is equal to loop_test_dt
-    for loop_result_dt in results_dt:
-        loop_result_dt_str = loop_result_dt.strftime(test_datetime_format) 
-        assert loop_result_dt_str == loop_test_dt, "loop_result_dt=(%s) != loop_test_dt" % loop_result_dt_str
-    #   Verify each item in results_epoch (as string) is equal to check_epoch
-    for loop_result_epoch in results_epoch:
-        assert str(loop_result_epoch) == check_epoch, "loop_result_epoch=(%s) != check_epoch" % str(loop_result_epoch)
-
+#for loop_test_dt in tests_dt:
+#    results_dt = []
+#    results_epoch = []
+#    loop_output_str = ""
+#
+#    #   Ongoing: 2020-12-28T17:55:37AEST datetime.strptime(datetime, format) does not support all named timezones (%Z)
+#
+#    _result = dateparser.parse(loop_test_dt, date_formats=[ test_datetime_format ],  settings={'RETURN_AS_TIMEZONE_AWARE': True})
+#    results_dt.append(_result)
+#    results_epoch.append(_result.timestamp())
+#
+#    #   Ongoing: 2020-12-28T18:33:52AEST custom format for dateutil.parser.parse()?
+#
+#    sys.stderr.write("loop_test_dt=(%s)\n" % str(loop_test_dt))
+#    sys.stderr.write("check_epoch=(%s)\n" % str(check_epoch))
+#    loop_output_str += "results_dt:\n%s\n" % pprint.pformat(results_dt)
+#    for loop_line in loop_output_str.strip().split("\n"):
+#        sys.stderr.write("\t%s\n" % loop_line)
+#    sys.stderr.write("\n")
+#    #   Verify each item in results_dt is equal to next item in list
+#    for loop_i in range(0, len(results_dt)-1):
+#        assert results_dt[loop_i] == results_dt[loop_i+1], "results not equal for loop_i=(%s)" % str(loop_i)
+#    #   Verify each item in results_dt, when convert to string using test_datetime_format, is equal to loop_test_dt
+#    for loop_result_dt in results_dt:
+#        loop_result_dt_str = loop_result_dt.strftime(test_datetime_format) 
+#        assert loop_result_dt_str == loop_test_dt, "loop_result_dt=(%s) != loop_test_dt" % loop_result_dt_str
+#    #   Verify each item in results_epoch (as string) is equal to check_epoch
+#    for loop_result_epoch in results_epoch:
+#        assert str(loop_result_epoch) == check_epoch, "loop_result_epoch=(%s) != check_epoch" % str(loop_result_epoch)
+#
 
 
 
