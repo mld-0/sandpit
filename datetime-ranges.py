@@ -2,6 +2,7 @@
 #   vim: set tabstop=4 modeline modelines=10 foldmethod=marker:
 #   vim: set foldlevel=2 foldcolumn=3: 
 #   }}}1
+import datetime
 import dateparser
 import pandas
 import pprint
@@ -97,9 +98,18 @@ def DTRange_FromStartEndAndCount(arg_dt_start, arg_dt_end, arg_count):
 def DTRange_FromStartEndAndInterval(arg_dt_start, arg_dt_end, arg_interval):
     return pandas.date_range(start=arg_dt_start, end=arg_dt_end, freq=arg_interval)
 
+def DayStartAndEndFromDate(arg_date):
+    if not isinstance(arg_date, datetime.datetime):
+        arg_date = dateparser.parse(arg_date)
+    result_start = arg_date.replace(hour=0, minute=0, second=0, microsecond=0)
+    result_end = arg_date.replace(hour=23, minute=59, second=59)
+    return [ result_start, result_end ]
 
 dt_start = "2020-01-01"
 dt_end = "2021-01-01"
+
+dt_startAndEnd = DayStartAndEndFromDate(dt_start)
+pprint.pprint(dt_startAndEnd)
 
 dt_range_count20 = DTRange_FromStartEndAndCount(dt_start, dt_end, 20)
 pprint.pprint(dt_range_count20)
