@@ -6,6 +6,7 @@ import datetime
 import dateparser
 import pandas
 import pprint
+from dateutil.relativedelta import relativedelta
 #   {{{2
 
 #   DateTime ranges using pandas.date_range
@@ -91,6 +92,23 @@ pandas.date_range(start='2017-01-01', end='2017-01-04', closed='right')
 #   U, us		microseconds
 #   N			nanoseconds
 #   }}}
+
+def MonthsRange(arg_month_start, arg_month_end):
+    if isinstance(arg_month_start, str):
+        arg_month_start = dateparser.parse(arg_month_start)
+    if isinstance(arg_month_end, str):
+        arg_month_end = dateparser.parse(arg_month_end)
+    _result = []
+    while arg_month_start <= arg_month_end:
+        _result.append(arg_month_start)
+        arg_month_start += relativedelta(months=1)
+    pprint.pprint(_result)
+
+dt_start = "2020-01-01"
+dt_end = "2021-01-01"
+
+MonthsRange(dt_start, dt_end)
+
 
 def DTRange_FromStartEndAndCount(arg_dt_start, arg_dt_end, arg_count):
     return pandas.date_range(start=arg_dt_start, end=arg_dt_end, periods=arg_count)
