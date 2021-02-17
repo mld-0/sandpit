@@ -4,7 +4,6 @@ from datetime import datetime
 time_start = datetime.now()
 
 test_len = 100000000
-test_len = 10000000
 
 l = [random.randrange(100, 999) for i in range(test_len)]
 
