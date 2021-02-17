@@ -234,9 +234,10 @@ print "\n";
 
 
 #	Quote-like operators
-#		q{} 		Enclose a string in single quotes
-#		qq{}		Enclose a string with double quotes
-#		qx{}		Enclose a string in invent quotes
+#		q{} 		(Quote) Enclose a string in single quotes
+#		qq{}		(Double Quote) Enclose a string with double quotes
+#		qx{}		(Quote Execute) Enclose a string in invent quotes
+#		qw{}		(Quote word) Word list (list of single-quoted items)
 $a = 10;
 $b = q{a = $a};
 print "Value of q{a = \$a} = $b\n";
