@@ -278,9 +278,24 @@ print "\$data{'Lisa'} = $data{'Lisa'}\n";
 print "\$data{'Kumar'} = $data{'Kumar'}\n";
 print "\n";
 
+#	Iterate over a hash (k, v)
 while ((my $key, my $value) = each(%data)) {
 	print "key=($key), value=($value)\n";
 }
+#	Iterate over a hash by key
+foreach my $key (keys %data) {
+	print "key=($key), value=($data{$key})\n";
+}
+print "\n";
+
+#	Printing a hash
+#		iterating by key
+print map { "k=($_), v=($data{$_})\n" } keys %data;
+#		interpolate to list
+print "@{[ %data ]}\n";
+#		using temp var
+my @temp = %data;
+print "@temp\n";
 print "\n";
 
 #	Preceding keys with '-' removes need for quotes, however keys must be specified with '-'
