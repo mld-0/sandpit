@@ -1,5 +1,7 @@
 import numpy as np
 
+#   See: OReilly Python for Data Analysis Ch4
+
 #   Create 2x3 (rows x cols) random np array
 data = np.random.rand(2, 3)
 
