@@ -7,7 +7,7 @@ import numpy as np
 #   {{{2
 #   See: OReilly Python for Data Analysis Ch5
 
-#   Series
+#   Series:
 #   A Series is a one-dimensional array-like object containing a sequence of values (of similar types to NumPy types) and an associated array of data labels, called its index.
 #   The simplest Series is formed from only an array of data
 #       Since we did not specify an index for the data, a default one consisting of the integers 0 through N - 1 (where N is the length of the data) is created
@@ -73,14 +73,12 @@ print(obj4)
 print()
 
 
-#   DataFrame
+#   DataFrame:
 #       A DataFrame represents a rectangular table of data and contains an ordered collec‐ tion of columns, each of which can be a different value type (numeric, string, boolean, etc.).
 #       The DataFrame has both a row and column index; it can be thought of as a dict of Series all sharing the same index.
 
 #   There are many ways to construct a DataFrame, though one of the most common is from a dict of equal-length lists or NumPy arrays
-data = {'state': ['Ohio', 'Ohio', 'Ohio', 'Nevada', 'Nevada', 'Nevada'],
-            'year': [2000, 2001, 2002, 2001, 2002, 2003],
-            'pop': [1.5, 1.7, 3.6, 2.4, 2.9, 3.2]}
+data = {'state': ['Ohio', 'Ohio', 'Ohio', 'Nevada', 'Nevada', 'Nevada'], 'year': [2000, 2001, 2002, 2001, 2002, 2003], 'pop': [1.5, 1.7, 3.6, 2.4, 2.9, 3.2]}
 frame = pd.DataFrame(data)
 print(frame)
 print()
@@ -96,8 +94,7 @@ print()
 
 #   If you pass a column that isn’t contained in the dict, it will appear with missing values in the result
 #       (however, len(index) must match length of data)
-frame2 = pd.DataFrame(data, columns=['year', 'state', 'pop', 'debt'],
-                            index=['one', 'two', 'three', 'four', 'five', 'six'])
+frame2 = pd.DataFrame(data, columns=['year', 'state', 'pop', 'debt'], index=['one', 'two', 'three', 'four', 'five', 'six'])
 print(frame2)
 print()
 
@@ -132,10 +129,76 @@ frame2['eastern'] = frame2.state == 'Ohio'
 del frame2['eastern']
 
 #   Another common form of data is a nested dict of dicts
-pop = {'Nevada': {2001: 2.4, 2002: 2.9},
-        'Ohio': {2000: 1.5, 2001: 1.7, 2002: 3.6}}
+pop = {'Nevada': {2001: 2.4, 2002: 2.9}, 'Ohio': {2000: 1.5, 2001: 1.7, 2002: 3.6}}
+frame3 = pd.DataFrame(pop)
+#   Set index and column name attribute
+frame3.index.name = 'year'; frame3.columns.name = 'state'
+print(frame3)
+#   Transpose (swap rows and columns)
+print(frame3.T)
+#   numpy array of data values
+print(frame3.values)
+print()
 
 #   Continue: 2021-02-23T23:27:04AEDT Python for Data Analysis Ch 5
+
+#   Possible data inputs to DataFrame constructor
+#       2d ndarray                                  Matrix of data 
+#       dict of arrays, lists, or tuples            Each sequence becomes a column in the DataFrame, must all be same length
+#       Numpy structured/record array               Treated as the 'dict-of-arrays' case
+#       dict of Series                              Each value becomes a column, indexes from each Series are unioned together 
+#                                                   to form the index if no explict index is passed
+#       dict of dicts                               Each inner dict becomes a column, keys are unioned to form the row index
+#       List of dicts or Series                     Each item becomes a row in the DataFrame, union of dict keys or series indexes
+#                                                   becomes the DataFrame's column labels
+#       list of list or tuples                      Treated as the 2d ndarray case
+#       Another DataFrame                           DataFrame's indexes are used unless different ones are passed
+#       NumPy MaskedArray                           Like the 2d ndarray case, except masked values become NA/missing in the result
+
+
+#   Index Objects:
+#       Pandas's Index objects are responsible for holding the axis labels and other metadata (like the axis name or names). Any array or other sequence of labels you use when constructing a Series or DataFrame is internally converted to an Index
+#       Index objects are immutable
+obj = pd.Series(range(3), index=['a', 'b', 'c'])
+index = obj.index
+print(index)
+
+#   In addition to being array-like, an Index also behaves like a fixed-size set. Unlike Python sets, a pandas Index can contain duplicate labels
+print(frame3.columns)
+print('Ohio' in frame3.columns)
+print(2003 in frame3.index)
+
+#   Index methods and properties
+#       append                  Concatenate with additional Index objects, producing a new Index 
+#       difference              Compute set difference as an Index
+#       intersection            Compute set intersection
+#       union                   Compute set union
+#       isin                    Compute boolean array indicating whether each value is contained in the passed collection 
+#       delete                  Compute new Index with element at index i deleted
+#       drop                    Compute new Index by deleting passed values
+#       insert                  Compute new Index by inserting element at index i
+#       is_monotonic            Returns True if each element is greater than or equal to the previous element 
+#       is_unique               Returns True if the Index has no duplicate values
+#       unique                  Compute the array of unique values in the Index
+
+#   Reindexing
+
+#   Dropping Entries from an Axis
+
+#   Indexing, Selection, and Filtering
+
+#   Arithmetic and Data Alignment
+
+#   Function Application and Mapping
+
+#   Sorting and Ranking
+
+#   Axis Indexes with Duplicate Labels
+
+#   Summarizing and Computing Descriptive Statistics
+#   Correlation and Covariance
+#   Unique Values, Value Counts, and Membership
+
 
 
 #   }}}1
