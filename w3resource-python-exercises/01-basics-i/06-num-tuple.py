@@ -1,0 +1,5 @@
+data_str = input("Enter number comma seperated list:\n")
+data_split = data_str.split(",")
+print("List: %s" % str(data_split))
+data_tuple = tuple(data_split)
+print("Tuple: %s" % str(data_tuple))
