@@ -11,12 +11,12 @@ s.close()
 hostname = socket.gethostname()
 
 #   Error
-#local_ip = socket.gethostbyname(hostname)
-#print(local_ip)
+local_ip = socket.gethostbyname(hostname)
+print(local_ip)
 
 #   0.0.0.0
-#local_ip = socket.gethostbyname("")
-#print(local_ip)
+local_ip = socket.gethostbyname("")
+print(local_ip)
 
 #host = socket.gethostbyname(socket.gethostname()) # or socket.getfqdn() if the former doesn't work
 host = socket.getfqdn(socket.gethostname()) # or socket.getfqdn() if the former doesn't work

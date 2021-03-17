@@ -1,3 +1,3 @@
 import subprocess
 cmd = ['ls', '-1']
-subprocess.call(cmd)
+subprocess.run(cmd)  # run waits for command to finish, equivelent to combined Popen and communicate calls
