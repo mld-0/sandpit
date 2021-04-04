@@ -9,7 +9,7 @@ print(b)
 print()
 
 #print(a[:, :, None, None])
-print(a[..., None, None])
+#print(a[..., None, None])
 
 #print(a[:, :, None, None].shape)
 #print(b.shape)
