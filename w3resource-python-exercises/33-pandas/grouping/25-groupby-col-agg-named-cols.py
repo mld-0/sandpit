@@ -18,6 +18,9 @@ print("values:")
 print(values)
 print()
 
+print(values.groupby(['school_code', 'class']).agg(np.max)
+
 results = values.groupby('school_code').agg({'age': [("mean_age", np.mean), ("min_age", np.min), ("max_age", np.max)]})
 print("results:")
 print(results)
+
