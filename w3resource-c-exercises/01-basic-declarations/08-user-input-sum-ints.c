@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 //	scanf(const char *format, ...)
 //		format		C 	
@@ -26,15 +27,15 @@ int main()
 
 	printf("Enter first integer\n");
 	if (scanf("%d", &x) != 1) {
-		fprintf(stderr, "Failed to read first integer\n");
-		return 2;
+		perror("Failed to read first integer\n");
+		exit(2);
 	}
 	printf("got x=(%i)\n\n", x);
 
 	printf("Enter the second integer\n");
 	if (scanf("%d", &y) != 1) {
-		fprintf(stderr, "Failed to read second integer\n");
-		return 2;
+		perror("Failed to read second integer\n");
+		exit(2);
 	}
 	printf("got y=(%i)\n\n", y);
 
