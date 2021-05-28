@@ -15,6 +15,7 @@ int main()
 	printf("%-20s\t%lu\n", "uint16_t", sizeof(uint16_t));
 	printf("%-20s\t%lu\n", "int", sizeof(int));
 	printf("%-20s\t%lu\n", "unsigned", sizeof(unsigned));
+	printf("%-20s\t%lu\n", "size_t", sizeof(size_t));
 	printf("%-20s\t%lu\n", "long", sizeof(long));
 	printf("%-20s\t%lu\n", "unsigned long", sizeof(unsigned long));
 	printf("%-20s\t%lu\n", "int32_t", sizeof(int32_t));
