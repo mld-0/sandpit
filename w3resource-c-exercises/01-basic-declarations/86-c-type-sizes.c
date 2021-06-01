@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 int main()
 {
@@ -22,6 +23,7 @@ int main()
 	printf("%-20s\t%lu\n", "uint32_t", sizeof(uint32_t));
 	printf("%-20s\t%lu\n", "long long", sizeof(long long));
 	printf("%-20s\t%lu\n", "int64_t", sizeof(int64_t));
+	printf("%-20s\t%lu\n", "clock_t", sizeof(clock_t));
 	printf("%-20s\t%lu\n", "unsigned long long", sizeof(unsigned long long));
 	printf("%-20s\t%lu\n", "uint64_t", sizeof(uint64_t));
 	printf("%-20s\t%lu\n", "float", sizeof(float));
