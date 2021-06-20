@@ -19,8 +19,9 @@
 #	-p: Places a printing loop around your command so that it acts on each
 #	    line of standard input. 
 #	-n: Places a non-printing loop around your command.
-#	-e: Allows you to provide the program as an argument rather
-#	    than in a file. 
+#	-e: Allows you to provide the program as an argument (line by line)
+#	    rather than in a file. 
+#	-E	as per '-e', but enable all optional features
 #	-i: Modifies your input file in-place (making a backup of the
 #	    original unless no argument given to -i)
 #	-w: Activates some warnings. Any good Perl coder will use this.
