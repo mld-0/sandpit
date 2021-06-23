@@ -2,7 +2,6 @@
 use strict;
 use warnings;
 use v5.032;
-
 use File::HomeDir;
 
 #	Prompt user for directory and navigate to it, use HOME if given directory is not valid

@@ -23,7 +23,8 @@ say "symlinks in dir:";
 foreach (readdir $dir_h) {
 	if (-l $_) {
 		my $path_readlink = readlink $_;
-		say "\$_=($_), path_readlink=($path_readlink)";
+		#say "\$_=($_), path_readlink=($path_readlink)";
+		say "$_ -> $path_readlink";
 	}
 }
 closedir $dir_h;
