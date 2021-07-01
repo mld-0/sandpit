@@ -8,3 +8,4 @@ $bin_cpan Regexp::Assemble
 $bin_cpan Module::Starter
 $bin_cpan Class::MethodMaker
 $bin_cpan File::Size
+$bin_cpan Crypt::Digest::SHA256
