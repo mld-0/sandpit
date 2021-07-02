@@ -9,3 +9,9 @@ $bin_cpan Module::Starter
 $bin_cpan Class::MethodMaker
 $bin_cpan File::Size
 $bin_cpan Crypt::Digest::SHA256
+$bin_cpan Module::Install # module-starter<?>
+$bin_cpan Module::Starter::AddModule
+
+$bin_cpan local::lib
+perl -MCPAN -Mlocal::lib -e 'CPAN::install(LWP)'
+
