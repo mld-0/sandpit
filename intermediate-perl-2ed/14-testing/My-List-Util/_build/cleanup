@@ -1,0 +1,5 @@
+do{ my $x = {
+       'My-List-Util-*' => 1,
+       'blib' => 1
+     };
+$x; }
