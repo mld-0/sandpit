@@ -52,6 +52,10 @@ sub sound {
 	return 'Squeak';
 }
 
+sub untested_method {
+	return 3;
+}
+
 =head1 AUTHOR
 
 Matthew L Davis, C<< <mld.0 at protonmail.com> >>

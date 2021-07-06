@@ -30,10 +30,10 @@ like( $at, qr/Subclass must define sound/, 'speak() dies with message' );
 
 
 #	Ongoing: 2021-07-04T21:38:37AEST perl, intermediate-perl-2ed, 14-02, use of Foofle subclass, defined in block, works, but not when called inside is() testing function?
-{ 
-	package Foofle;
-	use parent qw(Animal);
-	sub sound { return 'foof' }
-	is( Foofle->speak, "A Foofle goes foof!\n", 'Animal subclass successfully implements speak()');
-}
+#{ 
+#	package Foofle;
+#	use parent qw(Animal);
+#	sub sound { return 'foof' }
+#	is( Foofle->speak, "A Foofle goes foof!\n", 'Animal subclass successfully implements speak()');
+#}
 

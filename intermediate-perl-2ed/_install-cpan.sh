@@ -15,3 +15,6 @@ $bin_cpan Module::Starter::AddModule
 $bin_cpan local::lib
 perl -MCPAN -Mlocal::lib -e 'CPAN::install(LWP)'
 
+$bin_cpan Devel::Cover
+$bin_cpan File::Slurp
+$bin_cpan lib::relative

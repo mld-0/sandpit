@@ -20,16 +20,16 @@ http://www.pjcj.net
 <h1>File Coverage</h1>
 <table>
 <tr><td class="h" align="right">File:</td><td align="left">blib/lib/Animal/Mouse.pm</td></tr>
-<tr><td class="h" align="right">Coverage:</td><td align="left" class="c3">100.0%</td></tr>
+<tr><td class="h" align="right">Coverage:</td><td align="left" class="c1">88.5%</td></tr>
 </table>
 <div><br/></div>
 <table>
 <tr><th>line</th><th>stmt</th><th>bran</th><th>cond</th><th>sub</th><th>pod</th><th>time</th><th>code</th></tr>
 <tr><td class="h">1</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">package Animal::Mouse;</td></tr>
-<tr><td class="h">2</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L2">2</a></div></td><td></td><td><div>227934</div><div>3</div><div>8</div></td><td class="s">use parent qw(Animal);</td></tr>
-<tr><td class="h">3</td><td colspan="7"></td></tr><tr><td class="h">4</td><td><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L4">2</a></div></td><td></td><td><div>73</div><div>3</div></td><td class="s">use 5.032;</td></tr>
-<tr><td class="h">5</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L5">2</a></div></td><td></td><td><div>4</div><div>2</div><div>20</div></td><td class="s">use strict;</td></tr>
-<tr><td class="h">6</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L6">2</a></div></td><td></td><td><div>7</div><div>3</div><div>156</div></td><td class="s">use warnings;</td></tr>
+<tr><td class="h">2</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L2">6</a></div></td><td></td><td><div>246161</div><div>5</div><div>16</div></td><td class="s">use parent qw(Animal);</td></tr>
+<tr><td class="h">3</td><td colspan="7"></td></tr><tr><td class="h">4</td><td><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L4">6</a></div></td><td></td><td><div>173</div><div>16</div></td><td class="s">use 5.032;</td></tr>
+<tr><td class="h">5</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L5">6</a></div></td><td></td><td><div>12</div><div>2</div><div>60</div></td><td class="s">use strict;</td></tr>
+<tr><td class="h">6</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L6">6</a></div></td><td></td><td><div>10</div><div>11</div><div>499</div></td><td class="s">use warnings;</td></tr>
 <tr><td class="h">7</td><td colspan="7"></td></tr><tr><td class="h">8 - 16</td><td colspan="6"></td><td class="s"><pre>=head1 NAME
 
 Animal::Mouse - The great new Animal::Mouse!
@@ -61,17 +61,20 @@ if you don&#39;t export anything, such as for a purely object-oriented module.
 =head2 speak
 =cut</pre></td></tr>
 <tr><td class="h">41</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub speak {</td></tr>
-<tr><td class="h">42</td><td><div class="c3">1</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L42">1</a></div></td><td><div class="c3">1</div></td><td><div>19707</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my $class = shift;</td></tr>
-<tr><td class="h">43</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td></td><td><div>11</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$class-&gt;SUPER::speak(@_);</td></tr>
-<tr><td class="h">44</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td></td><td><div>79</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print &quot;(but you can barely hear it)\n&quot;;</td></tr>
+<tr><td class="h">42</td><td><div class="c3">3</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L42">3</a></div></td><td><div class="c3">1</div></td><td><div>2460</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my $class = shift;</td></tr>
+<tr><td class="h">43</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td></td><td><div>14</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$class-&gt;SUPER::speak(@_);</td></tr>
+<tr><td class="h">44</td><td><div class="c3">3</div></td><td></td><td></td><td></td><td></td><td><div>47</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print &quot;(but you can barely hear it)\n&quot;;</td></tr>
 <tr><td class="h">45</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
 <tr><td class="h">46</td><td colspan="7"></td></tr><tr><td class="h">47 - 49</td><td colspan="6"></td><td class="s"><pre>=head2 sound
 
 =cut</pre></td></tr>
 <tr><td class="h">50</td><td colspan="7"></td></tr><tr><td class="h">51</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub sound {</td></tr>
-<tr><td class="h">52</td><td><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L52">2</a></div></td><td><div class="c3">1</div></td><td><div>92694</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return &#39;Squeak&#39;;</td></tr>
+<tr><td class="h">52</td><td><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L52">6</a></div></td><td><div class="c3">1</div></td><td><div>210307</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return &#39;Squeak&#39;;</td></tr>
 <tr><td class="h">53</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">54</td><td colspan="7"></td></tr><tr><td class="h">55 - 106</td><td colspan="6"></td><td class="s"><pre>=head1 AUTHOR
+<tr><td class="h">54</td><td colspan="7"></td></tr><tr><td class="h">55</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub untested_method {</td></tr>
+<tr><td class="h">56</td><td><div class="c0">0</div></td><td></td><td></td><td><div class="c0"><a href="blib-lib-Animal-Mouse-pm--subroutine.html#L56">0</a></div></td><td><div class="c0">0</div></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 3;</td></tr>
+<tr><td class="h">57</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
+<tr><td class="h">58</td><td colspan="7"></td></tr><tr><td class="h">59 - 110</td><td colspan="6"></td><td class="s"><pre>=head1 AUTHOR
 
 Matthew L Davis, C&lt;&lt; &lt;mld.0 at protonmail.com&gt; &gt;&gt;
 
@@ -123,7 +126,7 @@ This is free software, licensed under:
 
 
 =cut</pre></td></tr>
-<tr><td class="h">107</td><td colspan="7"></td></tr><tr><td class="h">108</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">1; # End of Animal::Mouse</td></tr>
+<tr><td class="h">111</td><td colspan="7"></td></tr><tr><td class="h">112</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">1; # End of Animal::Mouse</td></tr>
 </table>
 </body>
 </html>
