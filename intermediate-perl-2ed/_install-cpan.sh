@@ -18,3 +18,4 @@ perl -MCPAN -Mlocal::lib -e 'CPAN::install(LWP)'
 $bin_cpan Devel::Cover
 $bin_cpan File::Slurp
 $bin_cpan lib::relative
+$bin_cpan DateTime;
