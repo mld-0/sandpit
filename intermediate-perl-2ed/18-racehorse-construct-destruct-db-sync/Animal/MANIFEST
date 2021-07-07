@@ -1,0 +1,17 @@
+Build.PL
+Changes
+lib/Animal.pm
+lib/Animal/Cow.pm
+lib/Animal/Horse.pm
+lib/Animal/Horse/RaceHorse.pm
+lib/Animal/Mouse.pm
+lib/Animal/Sheep.pm
+MANIFEST			This list of files
+README
+t/00-load.t
+t/Animal.t
+t/Horse.t
+t/manifest.t
+t/pod-coverage.t
+t/pod.t
+xt/boilerplate.t
