@@ -3,6 +3,7 @@ use Test::More;
 
 BEGIN { use_ok( 'My::List::Util' ) }
 
+
 ok( defined &My::List::Util::shuffle, 'shuffle() is defined' );
 
 {

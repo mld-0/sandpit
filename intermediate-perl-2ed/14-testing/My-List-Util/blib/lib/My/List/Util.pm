@@ -36,7 +36,7 @@ if you don't export anything, such as for a purely object-oriented module.
 =head1 SUBROUTINES/METHODS
 
 =head2 sum
-
+	sum() taken from intermediate-perl-2ed answers
 =cut
 
 sub sum {
@@ -48,7 +48,7 @@ sub sum {
 }
 
 =head2 shuffle
-
+	shuffle() taken from intermediate-perl-2ed answers
 =cut
 
 sub shuffle {
