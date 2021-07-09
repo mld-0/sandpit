@@ -14,7 +14,7 @@ parser.add_argument('-x', action='store_true', help="Switch option x")
 parser.add_argument('-y', action='store_true', help="Switch option y")
 parser.add_argument('-z', action='store_true', help="Switch option z")
 
-parser.add_argument('files', nargs='?', help="Specify files")
+parser.add_argument('files', nargs='+', help="Specify files")
 
 args = parser.parse_args()
 
