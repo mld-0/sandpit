@@ -53,6 +53,7 @@ perl -MText::CSV -E ''
 bin_cpan=cpan
 #$bin_cpan "Text::CSV_XS"
 #$bin_cpan "Text::CSV"
+#$bin_cpan "XML::LibXML"
 #	}}}
 
 #	CSV parsing:
