@@ -14,10 +14,11 @@ parser.add_argument('-x', action='store_true', help="Switch option x")
 parser.add_argument('-y', action='store_true', help="Switch option y")
 parser.add_argument('-z', action='store_true', help="Switch option z")
 
-parser.add_argument('files', nargs='+', help="Specify files")
+parser.add_argument('files', nargs='*', help="Specify files")
 
 args = parser.parse_args()
 
+#   Relying on argparser to provide <item> required errors (to stderr?)?
 if (args.alpha is None and args.beta is None and not args.x and not args.y and not args.z and not args.files):
     print("Require at least one argument.")
     parser.print_help()

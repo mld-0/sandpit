@@ -43,6 +43,7 @@ while (loop_i < len(sys.argv)):
             logging.debug("arg_val_A=(%r)" % (arg_val_A))
             continue
         except IndexError as e:
+            logging.error("error, value for -a not given")
             print("error, value for -a not given")
             exit()
         except Exception as e:
@@ -55,6 +56,7 @@ while (loop_i < len(sys.argv)):
             logging.debug("arg_val_B=(%r)" % (arg_val_B))
             continue
         except IndexError as e:
+            logging.error("error, value for -a not given")
             print("error, value for -a not given")
             exit()
         except Exception as e:
@@ -76,6 +78,7 @@ if (len(arg_files) != 0):
     print(len(arg_files))
 
 if (arg_val_A is None and arg_val_B is None and not arg_x and not arg_y and not arg_z and (len(arg_files) == 0)):
+    logging.error("no option, print help and exit")
     print("Require at least one option")
     print_help()
         
@@ -98,6 +101,7 @@ if (arg_files):
     if type(arg_files) is str:
         arg_files = [ arg_files ]
     paths_list = [os.path.join(os.getcwd(), path) for path in arg_files]
+    #logging.debug("paths_list=(%f)" % paths_list)
     print("paths_list=(%s)" % paths_list)
 
 

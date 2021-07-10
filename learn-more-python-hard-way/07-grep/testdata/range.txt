@@ -1,0 +1,12 @@
+foo
+BEGIN
+1234
+6789
+END
+bar
+BEGIN
+a
+b
+c
+END
+baz
