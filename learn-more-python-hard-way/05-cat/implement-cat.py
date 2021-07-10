@@ -51,6 +51,9 @@ else:
     print_filehandle(sys.stdin, args)
 
 
+if __name__ == '__main__':
+    unittest.main()
+
 ##   cat args:
 #       With no FILE, or when FILE is -, read standard input.
 #       -A, --show-all
@@ -73,4 +76,5 @@ else:
 #       --help display this help and exit
 #       --version
 #              output version information and exit
+
 

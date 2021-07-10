@@ -5,7 +5,8 @@ import argparse
 import logging
 logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
-def open_if_valid_file(parser, arg):
+#def _open_if_valid_file(parser, arg):
+def _open_if_valid_file(arg):
     if not os.path.isfile(arg):
         logging.warning("skip non-file arg=(%r)" % arg)
         return arg
@@ -15,7 +16,8 @@ def open_if_valid_file(parser, arg):
 parser = argparse.ArgumentParser()
 
 parser.add_argument('pattern', action='store', type=str, help="Search Pattern")
-parser.add_argument('files',  type=lambda x: open_if_valid_file(parser, x), nargs='*', default=sys.stdin, help="Path to search for item")
+#parser.add_argument('files',  type=lambda x: _open_if_valid_file(parser, x), nargs='*', default=sys.stdin, help="Path to search for item")
+parser.add_argument('files',  type=_open_if_valid_file, nargs='*', default=sys.stdin, help="Path to search for item")
 
 parser.add_argument('-i', '--ignore-case', action='store_true')
 parser.add_argument('-v', '--invert-match', action='store_true')

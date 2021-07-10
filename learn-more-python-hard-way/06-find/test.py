@@ -15,7 +15,7 @@ logging.debug("argv=(%r)" % sys.argv)
 
 test_bin_python = "/usr/local/bin/python3"
 test_script_find = "implement-find.py"
-test_data_dir = "testdata"
+test_data_dir = "data_test"
 test_compare_results_sort = True  # haven't implemented same sorting as used by find, therefore sort both results before comparing
 
 class Test_ImplementFind(unittest.TestCase):
@@ -58,4 +58,7 @@ class Test_ImplementFind(unittest.TestCase):
         args_binpython = [ test_data_dir, '--type', 'd', '--name', 'hij*' ]
         args_find = [ test_data_dir, '-type', 'd', '-name', 'hij*' ]
         self.compare_BinPython_Find(args_binpython, args_find)
+
+if __name__ == '__main__':
+    unittest.main()
 

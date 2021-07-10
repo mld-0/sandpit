@@ -7,7 +7,7 @@ test_bin_python = "/usr/local/bin/python3"
 
 test_script_argv = "using-sysargv.py"
 test_script_argparse = "using-argparse.py"
-test_data_dir = "testdata"
+test_data_dir = "data_test"
 
 class Test_ProcessingArgs(unittest.TestCase):
 
@@ -57,4 +57,7 @@ class Test_ProcessingArgs(unittest.TestCase):
 
     #   Continue: 2021-07-10T16:23:56AEST learn-more-python-hard-way/04-cli-arguments/test.py, (the menial task of) completing the remainder of the "you did/didn't enter these values" tests
 
+
+if __name__ == '__main__':
+    unittest.main()
 

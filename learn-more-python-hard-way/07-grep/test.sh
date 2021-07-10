@@ -1,7 +1,7 @@
 
 bin_python=/usr/local/bin/python3
 test_script_grep="implement-grep.py"
-test_dir=testdata
+test_dir=data_test
 
 test_script() {
 	local disregard_stderr=1
