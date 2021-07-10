@@ -40,6 +40,9 @@ class Test_ImplementCut(unittest.TestCase):
     def test_csv_fields_26(self):
         args = [ "-d", ",", "-f", "2-6", test_file_path_csv ]
         self.compare_BinPython_Cut_OutputAndRC(args, args)
+    def test_csv_fields_outputdelim_26(self):
+        args = [ "-d", ",", "-f", "2-6", "--output-delimiter", ";", test_file_path_csv ]
+        self.compare_BinPython_Cut_OutputAndRC(args, args)
 
     #   -c: columns tests
     def test_csv_cols_all(self):
@@ -48,15 +51,18 @@ class Test_ImplementCut(unittest.TestCase):
     def test_csv_cols_26(self):
         args = [ "-c", "2-6", test_file_path_csv ]
         self.compare_BinPython_Cut_OutputAndRC(args, args)
+    def test_csv_cols_26(self):
+        args = [ "-c", "1,4,5-6", test_file_path_csv ]
+        self.compare_BinPython_Cut_OutputAndRC(args, args)
 
-    #   -b: bytes tests
-    def test_csv_bytes_all(self):
-        args = [ "-b", "1-", test_file_path_csv ]
-        self.compare_BinPython_Cut_OutputAndRC(args, args)
-    def test_csv_bytes_26(self):
-        args = [ "-b", "2-6", test_file_path_csv ]
-        self.compare_BinPython_Cut_OutputAndRC(args, args)
-    #   TODO: 2021-07-10T20:54:25AEST learning-more-python-hard-way, 08/implement-cut.py, bytes testcase using an all-bytes.hex file
+    ##   -b: bytes tests
+    #def test_csv_bytes_all(self):
+    #    args = [ "-b", "1-", test_file_path_csv ]
+    #    self.compare_BinPython_Cut_OutputAndRC(args, args)
+    #def test_csv_bytes_26(self):
+    #    args = [ "-b", "2-6", test_file_path_csv ]
+    #    self.compare_BinPython_Cut_OutputAndRC(args, args)
+    ##   TODO: 2021-07-10T20:54:25AEST learning-more-python-hard-way, 08/implement-cut.py, bytes testcase using an all-bytes.hex file
 
 
     #   Others:
