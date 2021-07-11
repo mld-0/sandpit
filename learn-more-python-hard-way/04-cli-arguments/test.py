@@ -9,18 +9,18 @@ test_script_argv = "using-sysargv.py"
 if not (os.path.isfile(test_script_argv)):
     self_dir = os.path.dirname(os.path.realpath(__file__))
     test_script_argv = os.path.join(self_dir, test_script_argv)
-assert(os.path.isfile(test_script_argv), "Failed to argv 'implement-argv.py' and '%s'" % test_script_argv)
+assert os.path.isfile(test_script_argv), "Failed to argv 'implement-argv.py' and '%s'" % test_script_argv
 
 test_script_argparse = "using-argparse.py"
 if not (os.path.isfile(test_script_argparse)):
     self_dir = os.path.dirname(os.path.realpath(__file__))
     test_script_argparse = os.path.join(self_dir, test_script_argparse)
-assert(os.path.isfile(test_script_argparse), "Failed to argparse 'implement-argparse.py' and '%s'" % test_script_argparse)
+assert os.path.isfile(test_script_argparse), "Failed to argparse 'implement-argparse.py' and '%s'" % test_script_argparse
 
 test_data_dir = "../data_test"
 if not (os.path.isdir(test_data_dir)):
-    test_data_dir = "../data_test"
-assert(os.path.isdir(test_data_dir), "Failed to find '../data_test' and 'data_test'")
+    test_data_dir = "data_test"
+assert os.path.isdir(test_data_dir), "Failed to find '../data_test' and 'data_test'"
     
 
 class Test_ProcessingArgs(unittest.TestCase):

@@ -20,12 +20,12 @@ test_script_find = "implement-find.py"
 if not (os.path.isfile(test_script_find)):
     self_dir = os.path.dirname(os.path.realpath(__file__))
     test_script_find = os.path.join(self_dir, test_script_find)
-assert(os.path.isfile(test_script_find), "Failed to find 'implement-find.py' and '%s'" % test_script_find)
+assert os.path.isfile(test_script_find), "Failed to find 'implement-find.py' and '%s'" % test_script_find
 
 test_data_dir = "data_test"
 if not (os.path.isdir(test_data_dir)):
     test_data_dir = "../data_test"
-assert(os.path.isdir(test_data_dir), "Failed to find '../data_test' and 'data_test'")
+assert os.path.isdir(test_data_dir), "Failed to find '../data_test' and 'data_test'"
     
 
 test_compare_results_sort = True  # haven't implemented same sorting as used by find, therefore sort both results before comparing

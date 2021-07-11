@@ -10,7 +10,7 @@ echo $( date "+%FT%H:%M:%S%Z" ) >> "$test_results"
 
 IFS_temp=$IFS
 IFS=$'\0'
-test_py_files=( $( find . -name 'test.py' -type f -print0 | sed "s/\x00$//" ) )
+test_py_files=( $( find . -name 'test.py' -type f -print0 | perl -pE "s/\x00$//" ) )
 IFS=$IFS_temp
 for loop_file in "${test_py_files[@]}"; do
 	$bin_python "$loop_file" 
@@ -21,7 +21,7 @@ echo ""
 
 IFS_temp=$IFS
 IFS=$'\0'
-test_sh_files=( $( find . -name 'test.sh' -type f -print0 | sed "s/\x00$//" ) )
+test_sh_files=( $( find . -name 'test.sh' -type f -print0 | perl -pE "s/\x00$//" ) )
 IFS=$IFS_temp
 for loop_file in "${test_sh_files[@]}"; do
 	time ( $SHELL "$loop_file" )
