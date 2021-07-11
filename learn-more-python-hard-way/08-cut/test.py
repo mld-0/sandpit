@@ -8,8 +8,19 @@ import logging
 logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
 test_bin_python = "/usr/local/bin/python3"
+
 test_script_cut = "implement-cut.py"
-test_data_dir = "data_test"
+if not (os.path.isfile(test_script_cut)):
+    self_dir = os.path.dirname(os.path.realpath(__file__))
+    test_script_cut = os.path.join(self_dir, test_script_cut)
+assert(os.path.isfile(test_script_cut), "Failed to find 'implement-find.py' and '%s'" % test_script_cut)
+
+test_data_dir = "../data_test"
+if not (os.path.isdir(test_data_dir)):
+    test_data_dir = "data_test"
+assert(os.path.isdir(test_data_dir), "Failed to find '../data_test' and 'data_test'")
+    
+
 
 test_file_path_csv = os.path.join(test_data_dir, "values.csv")
 test_file_path_allbytes = os.path.join(test_data_dir, "allbytes.hex")

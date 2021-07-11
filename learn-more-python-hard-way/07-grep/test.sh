@@ -1,7 +1,23 @@
 
-bin_python=/usr/local/bin/python3
+bin_python="/usr/local/bin/python3"
 test_script_grep="implement-grep.py"
-test_dir=data_test
+if [[ ! -f "$test_script_grep" ]]; then
+	self_dir="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+	test_script_grep="$self_dir/implement-grep.py"
+fi
+if [[ ! -f "$test_script_grep" ]]; then
+	echo "Failed to find 'implement-grep.py' and '$test_script_grep'"
+	exit 2
+fi
+
+test_dir="../data_test"
+if [[ ! -d "$test_dir" ]]; then
+	test_dir="data_test"
+fi
+if [[ ! -d "$test_dir" ]]; then
+	echo "Failed to find '../data_test' and 'data_test'"
+	exit 2
+fi
 
 test_script() {
 	local disregard_stderr=1
