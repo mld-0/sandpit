@@ -30,6 +30,11 @@ def _open_if_valid_file(arg):
 def _filter_line(arg_line, args):
     line_start = args.skip_chars
     line_end = args.check_chars
+    if (line_end is None):
+        line_end = len(arg_line)
+    if (line_start is None):
+        line_start = 0
+    logging.debug("line_start=(%r), line_end=(%r)" % (line_start, line_end))
     result = arg_line[line_start:line_end]
     logging.debug("result=(%r)" % result)
     return result
@@ -63,15 +68,39 @@ parser.add_argument('input', nargs='?', default=sys.stdin, type=_open_if_valid_f
 parser.add_argument('output', nargs='?', default=None, help="Specify output file (or default to stdout)")
 
 args = parser.parse_args()
+
+if (type(args.skip_chars) is list):
+    if len(args.skip_chars) > 1:
+        raise Exception("len(args.skip_chars)=(%r) should not be > 1" % len(args.skip_chars))
+    args.skip_chars = args.skip_chars[0]
+if (type(args.check_chars) is list):
+    if len(args.check_chars) > 1:
+        raise Exception("len(args.check_chars)=(%r) should not be > 1" % len(args.check_chars))
+    args.check_chars = args.check_chars[0]
+
 logging.debug("args=(%r)" % args)
 
 lines_buffer = []
+lines_buffer_comparison_strings = []
 for loop_line in args.input:
-    logging.debug("loop_line=(%r)" % loop_line)
     loop_line = loop_line.removesuffix('\n')
+    logging.debug("loop_line=(%r)" % loop_line)
     lines_buffer.append(loop_line)
+    loop_line = _filter_line(loop_line, args)
+    lines_buffer_comparison_strings.append(loop_line)
 
-logging.debug("lines_counter=(%r)" % lines_counter)
+#   Output consists of these indexes from lines_buffer:
+lines_buffer_output_indexes = list(range(0, len(lines_buffer)))
+
+#   Continue: 2021-07-12T22:02:20AEST determine values of lines_buffer_output_indexes from indexes of those items in lines_buffer to output
+
+logging.debug("lines_buffer_output_indexes=(%r)" % lines_buffer_output_indexes)
+for loop_line_index in lines_buffer_output_indexes:
+    loop_line = lines_buffer[loop_line_index]
+    print(loop_line)
+
+logging.debug("lines_buffer=(%r)" % str(lines_buffer))
+logging.debug("lines_buffer_comparison_strings=(%r)" % str(lines_buffer_comparison_strings))
 
 #   uniq man
 #   {{{
